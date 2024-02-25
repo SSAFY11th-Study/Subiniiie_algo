@@ -1,7 +1,7 @@
+# 무언가 틀림
 switches_num = int(input())
 switches = list(map(int, input().split()))
 students_num = int(input())
-# 성별, 학생이 받은 수
 students = [list(map(int, input().split())) for _ in range(students_num)]
 
 switches.insert(0, 0)
@@ -21,16 +21,16 @@ for i in range(students_num) :
             switches[students[i][1]] = 1
         else :
             switches[students[i][1]] = 0
-        for l in range(1, students[i][1]) :
-            if switches[students[i][1]-l] == switches[students[i][1]+l] :
-                if switches[students[i][1]-l] == 0 :
-                    switches[students[i][1] - l] = 1
-                    switches[students[i][1] + l] = 1
+        for j in range(1, students[i][1]) :
+            if switches[students[i][1] - j] == switches[students[i][1] + j] :
+                if switches[students[i][1] - j] == 0 :
+                    switches[students[i][1] - j] = 1
+                    switches[students[i][1] + j] = 1
                 else :
-                    switches[students[i][1] - l] = 0
-                    switches[students[i][1] + l] = 0
+                    switches[students[i][1] - j] = 0
+                    switches[students[i][1] + j] = 0
             else :
                 break
 
-        print(*switches[1:])
-
+for i in range(1, switches_num, 20) :
+    print(*switches[i:i+20])
