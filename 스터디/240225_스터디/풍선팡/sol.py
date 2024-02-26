@@ -1,4 +1,3 @@
-
 import sys
 sys.stdin = open('input.txt')
 
@@ -23,4 +22,3 @@ for tc in range(1, T+1) :
            if max_num < temp :
                max_num = temp
     print(f'#{tc} {max_num}')
-
